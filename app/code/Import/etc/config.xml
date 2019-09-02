@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <queue_manager>
+            <general>
+                <keep_logs>30</keep_logs>
+                <send_email_on_failure>0</send_email_on_failure>
+            </general>
+            <customer_import>
+                <file_path>urapidflow/import</file_path>
+                <file_name>customers.csv</file_name>
+            </customer_import>
+        </queue_manager>
+    </default>
+</config>

@@ -1,0 +1,90 @@
+<?php
+/** @var $block \Borntechies\LicensePlate\Block\Extended */
+?>
+<script>
+    require([
+        "jquery",
+        'ko'
+
+    ], function($, ko){
+        return availableModels = ko.observableArray(<?php /* @escapeNotVerified */ echo $this->getManufactures() ?>);
+    });
+</script>
+
+<div class="block block-licenseplate-extended-search" id="block-licenseplate-extended-search"
+     data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": true}}'>
+
+    <div class="block block-title" data-role="collapsible">
+        <div data-role="trigger" class="filter-options-title">
+            <?php /* @escapeNotVerified */ echo __('Select a car'); ?>
+        </div>
+    </div>
+    <div id="licenseplate-search-messages"></div>
+    <div class="block block-content filter-options-content" data-role="content">
+        <form class="form extended-search" id="licenseplate_search_form" method="post"
+              data-mage-init='{"licensePlateExtendedSearch":{
+              "form": "#licenseplate_search_form",
+              "submitUrl": "<?php /* @escapeNotVerified */ echo $block->getExtendedResultUrl() ?>",
+              "updateUrl": "<?php /* @escapeNotVerified */ echo $block->getUpdateUrl() ?>"}}'>
+            <input type="hidden" id="licenseplate-search-model-id" name="model_id" data-role="licenseplate-model-id"/>
+            <div class="field licenseplate-search-extended">
+                <label class="label" for="licenseplate.manufacturer" data-role="licenseplate-search-label">
+                    <span><?php /* @escapeNotVerified */ echo __('Manufacturer'); ?></span>
+                </label>
+                <div class="control">
+                    <select class="select"
+                            id="licenseplate.manufacturer"
+                            name="manufacturer"
+                            data-role="licenseplate-manufacturer"
+                            data-validate="{required:true}"
+                            data-bind="
+                                options: availableModels,
+                                optionsText: 'title',
+                                optionsValue: 'value',
+                                optionsCaption: '<?php /* @escapeNotVerified */ echo __('Select Manufacturer')?>',
+                                value: '',
+                                optionsAfterRender: function(option, item) { ko.applyBindingsToNode(option, {disable: !item}, item); }"
+                    >
+                    </select>
+                </div>
+            </div>
+            <div class="field licenseplate-search-extended">
+                <label class="label" for="licenseplate.model" data-role="mini-licenseplate-search-label">
+                    <span><?php /* @escapeNotVerified */ echo __('Model'); ?></span>
+                </label>
+                <div class="control">
+                    <select class="select" id="licenseplate.model" name="model" data-role="licenseplate-model" data-validate="{required:true}">
+                    </select>
+                </div>
+            </div>
+            <div class="field licenseplate-search-extended">
+                <label class="label" for="licenseplate.generation" data-role="mini-licenseplate-search-label">
+                    <span><?php /* @escapeNotVerified */ echo __('Generation'); ?></span>
+                </label>
+                <div class="control">
+                    <select id="licenseplate.generation" name="generation" data-role="licenseplate-generation" data-validate="{required:true}">
+                    </select>
+                </div>
+            </div>
+            <div class="field licenseplate-search-extended">
+                <label class="label" for="licenseplate.construction.period" data-role="mini-licenseplate-search-label">
+                    <span><?php /* @escapeNotVerified */ echo __('Construction Period'); ?></span>
+                </label>
+                <div class="control">
+                    <select id="licenseplate.construction.period" name="construction_period" data-role="licenseplate-construction-period" data-validate="{required:true}">
+                    </select>
+                </div>
+            </div>
+            <div class="field licenseplate-search-extended">
+                <label class="label" for="licenseplate.motor" data-role="mini-licenseplate-search-label">
+                    <span><?php /* @escapeNotVerified */ echo __('Motor'); ?></span>
+                </label>
+                <div class="control">
+                    <select id="licenseplate.motor" name="motor" data-role="licenseplate-motor" data-validate="{required:true}">
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

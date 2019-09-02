@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Borntechies\LicensePlate\Api\Data\ModelSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Borntechies\LicensePlate\Api\Data\ModelInterface" type="Borntechies\LicensePlate\Model\Model" />
+    <preference for="Borntechies\LicensePlate\Api\ModelRepositoryInterface" type="Borntechies\LicensePlate\Model\ModelRepository" />
+    <preference for="Borntechies\LicensePlate\Api\Data\ModelProductInterface" type="Borntechies\LicensePlate\Model\ModelProduct" />
+    <preference for="Borntechies\LicensePlate\Api\ModelProductRepositoryInterface" type="Borntechies\LicensePlate\Model\ModelProductRepository" />
+    <preference for="Borntechies\LicensePlate\Api\Data\ModelProductSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Borntechies\LicensePlate\Api\Data\ModelRegistrationInterface" type="Borntechies\LicensePlate\Model\ModelRegistration" />
+    <preference for="Borntechies\LicensePlate\Api\ModelRegistrationRepositoryInterface" type="Borntechies\LicensePlate\Model\ModelRegistrationRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="licenseplate_model_listing_data_source" xsi:type="string">Borntechies\LicensePlate\Model\ResourceModel\Model\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Borntechies\LicensePlate\Api\Data\ModelInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">license_plate_model</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\LicensePlate\Model\Import\Models">
+        <arguments>
+            <argument name="table" xsi:type="string">license_plate_model</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\LicensePlate\Model\Import\Products">
+        <arguments>
+            <argument name="table" xsi:type="string">license_plate_product</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\LicensePlate\Model\Import\Registrations">
+        <arguments>
+            <argument name="table" xsi:type="string">license_plate_registration</argument>
+        </arguments>
+    </type>
+    <virtualType name="Borntechies\LicensePlate\Model\ResourceModel\Model\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">license_plate_model</argument>
+            <argument name="resourceModel" xsi:type="string">Borntechies\LicensePlate\Model\ResourceModel\Model</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="borntechies_licenseplate_import" xsi:type="object">Borntechies\LicensePlate\Console\Command\LicenseplateImport</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

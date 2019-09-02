@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Borntechies_LicensePlate::license_plate" title="License Plate" translate="title" module="Borntechies_LicensePlate" sortOrder="40" parent="Magento_Catalog::catalog" dependsOnModule="Borntechies_LicensePlate" resource="Borntechies_LicensePlate::license_plate"/>
+        <add id="Borntechies_LicensePlate::model" title="Models" module="Borntechies_LicensePlate" sortOrder="10" parent="Borntechies_LicensePlate::license_plate" action="licenseplate/model" resource="Borntechies_LicensePlate::license_plate"/>
+    </menu>
+</config>

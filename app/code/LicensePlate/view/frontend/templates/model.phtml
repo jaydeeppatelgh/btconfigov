@@ -1,0 +1,44 @@
+<?php /**@var \Borntechies\LicensePlate\Block\Result\Model $block */ ?>
+
+
+<?php if ($model = $block->getModelInfo()) : ?>
+<div class="licence-search <?php echo $block->escapeHtml($model->getMake()) ?>">
+    <div class="main-container">
+        <div class="licence-search-logo">
+            <img class="part-find-logo" src="<?php echo $this->getViewFileUrl('Borntechies_LicensePlate::images/'.strtolower($model->getMake()).'.png'); ?>" alt="part-finder-logo-search">
+        </div>
+        <ul class="licence-search-list">
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Brand:')) ?> </b></p>
+                <p><?php echo $block->escapeHtml($model->getMake()) ?></p>
+            </li>
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Model:')) ?> </b></p>
+                <p><?php echo $block->escapeHtml($model->getModel()) ?></p>
+            </li>
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Fuel:')) ?> </b></p>
+                <p><?php echo $block->escapeHtml($model->getFuel()) ?></p>
+            </li>
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Motor:')) ?> </b></p>
+               <p><?php echo $block->escapeHtml($model->getMotorCode()) ?></p>
+            </li>
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Generation:')) ?> </b></p>
+                <p><?php echo $block->escapeHtml($model->getGeneration()) ?></p>
+            </li>
+            <li>
+                <p><b><?php echo $block->escapeHtml(__('Construction Period:')) ?> </b></p>
+                <p><?php echo $block->escapeHtml($model->getConstructionPeriod()) ?></p>
+            </li>
+        </ul>
+        <div class="remove-filter">
+                <a href="<?php echo $block->getUrl('licenseplatesearch/result/remove') ?>" >
+                    <i class="fa fa-fw" aria-hidden="true" title="<?php /* @escapeNotVerified */ echo __('Remove filter') ?>"></i>
+                </a>
+        </div>
+    </div>
+</div>    
+<?php endif; ?>
+

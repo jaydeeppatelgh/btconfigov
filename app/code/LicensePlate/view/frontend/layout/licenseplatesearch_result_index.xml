@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_Shopby::css/amshopby.css"/>
+        <css src="Amasty_Shopby::css/chosen/chosen.css"/>
+    </head>
+    <body>
+        <attribute name="class" value="page-with-filter"/>
+        <attribute name="class" value="page-products"/>
+        <referenceBlock name="catalog.topnav.custom" remove="true" />
+        <referenceContainer name="content">
+            <block class="Borntechies\LicensePlate\Block\Result\Model" name="licenseplate_model" template="Borntechies_LicensePlate::model.phtml" cacheable="false" />
+            <block class="Borntechies\LicensePlate\Block\Result" name="search.category.list" template="category-list.phtml" cacheable="false" />
+            <block class="Borntechies\LicensePlate\Block\Result" name="search.result" template="result.phtml" cacheable="false">
+                <block class="Borntechies\LicensePlate\Block\SearchResult\ListProduct" name="search_result_list" template="product/list.phtml" cacheable="false">
+                    <arguments>
+                        <!-- If argument's position depends on image size changeable in VDE:
+                        positions:list-secondary,grid-secondary,list-actions,grid-actions,list-primary,grid-primary
+                    -->
+                        <argument name="positioned" xsi:type="string">positions:list-secondary</argument>
+                    </arguments>
+                    <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="product/list/toolbar.phtml" cacheable="false">
+                        <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager" cacheable="false"/>
+                    </block>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">product_list_toolbar</argument>
+                    </action>
+                    <block class="Magento\Framework\View\Element\RendererList" name="category.product.type.details.renderers" as="details.renderers">
+                        <block class="Magento\Framework\View\Element\Template" as="default"/>
+                    </block>
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="catalogsearch.product.addto" as="addto">
+                        <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                               name="catalogsearch.product.addto.compare" as="compare"
+                               template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                    </block>
+                </block>
+                <action method="setListOrders"/>
+                <action method="setListModes"/>
+                <action method="setListCollection"/>
+            </block>
+            <block class="Amasty\Shopby\Block\Product\ProductList\Ajax" name="category.amshopby.ajax" template="product/productlist/ajax.phtml" after="-"/>
+            <block class="Amasty\Shopby\Block\Navigation\Sync" name="Amasty.shopby.navigation.sync" />
+            <block class="Amasty\Shopby\Block\Navigation\UrlModifier" name="Amasty.shopby.navigation.urlmodifier" />
+        </referenceContainer>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\LayeredNavigation\Block\Navigation\LicensePlate" name="catalogsearch.leftnav" after="-" template="Borntechies_LicensePlate::layer/view.phtml">
+                <block class="Magento\LayeredNavigation\Block\Navigation\State" name="catalogsearch.navigation.state" as="state" template="Borntechies_LicensePlate::layer/state.phtml"/>
+                <block class="Amasty\Shopby\Block\Navigation\FilterRenderer" name="catalog.navigation.renderer" as="renderer" template="layer/filter.phtml"/>
+            </block>
+            <!--<block class="Amasty\Shopby\Block\Navigation\FilterCollapsing\Category" name="catalog.navigation.collapsing" after="catalog.leftnav" template="Amasty_Shopby::layer/filter_collapsing.phtml"/>-->
+            <!--<block class="Amasty\Shopby\Block\Navigation\SwatchesChoose\Category" name="catalog.navigation.swatches.choose" after="catalog.navigation.collapsing" template="Amasty_Shopby::layer/filter_swatches_choose.phtml"/>-->
+            <block
+                    class="Amasty\Shopby\Block\Navigation\ApplyButton"
+                    name="amasty.shopby.applybutton.sidebar"
+                    after="catalog.leftnav"
+                    >
+                <action method="setNavigationSelector">
+                    <argument name="selector" xsi:type="string">.sidebar</argument>
+                </action>
+                <action method="setButtonPosition">
+                    <argument name="position" xsi:type="string">sidebar</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="category.product.list.additional">
+            <container name="amshopby.catalog.topnav.container" htmlTag="div" htmlClass="catalog-topnav amasty-catalog-topnav" before="-">
+                <block class="Amasty\Shopby\Block\Navigation\ApplyButton" name="amasty.shopby.applybutton.topnav" before="-">
+                    <action method="setNavigationSelector">
+                        <argument name="selector" xsi:type="string">.catalog-topnav</argument>
+                    </action>
+                    <action method="setButtonPosition">
+                        <argument name="position" xsi:type="string">top</argument>
+                    </action>
+                </block>
+                <block class="Amasty\Shopby\Block\Navigation\CategoryTop" name="amshopby.catalog.topnav" template="Magento_LayeredNavigation::layer/view.phtml">
+                    <block class="Amasty\Shopby\Block\Navigation\Top\State" name="amshopby.catalog.topnav.state" as="state" />
+                    <block class="Amasty\Shopby\Block\Navigation\FilterRenderer" name="amshopby.catalog.topnav.renderer" as="renderer" template="layer/filter.phtml"/>
+                </block>
+                <container name="amshopby.catalog.topnav.container.last" htmlTag="div" htmlClass="catalog-topnav-last-item" after="amshopby.catalog.topnav"></container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

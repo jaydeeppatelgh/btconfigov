@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Borntechies\LicensePlate\Block\SearchResult\ListProduct" type="Magento\Catalog\Block\Product\ListProduct">
+        <arguments>
+            <argument name="catalogLayer" xsi:type="object">Magento\Catalog\Model\Layer\Category</argument>
+        </arguments>
+        <plugin name="Borntechies_LicensePlate::wrapProductList" type="Amasty\Shopby\Plugin\Ajax\ProductListWrapper" />
+    </virtualType>
+    <type name="Magento\CatalogSearch\Model\Search\IndexBuilder">
+        <plugin name="licensePlateModelIdAggregation" type="Borntechies\LicensePlate\Plugin\Search\IndexBuilder"/>
+    </type>
+    <virtualType name="licensePlateFilterList" type="Magento\Catalog\Model\Layer\FilterList">
+        <arguments>
+            <argument name="filterableAttributes" xsi:type="object">Magento\Catalog\Model\Layer\Category\FilterableAttributeList</argument>
+            <argument name="filters" xsi:type="array">
+                <!--<item name="attribute" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Attribute</item>-->
+                <!--<item name="price" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Price</item>-->
+                <!--<item name="decimal" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Decimal</item>-->
+                <!--<item name="category" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Category</item>-->
+                <item name="attribute" xsi:type="string">Amasty\Shopby\Model\Layer\Filter\Attribute</item>
+                <item name="price" xsi:type="string">Amasty\Shopby\Model\Layer\Filter\Price</item>
+                <item name="decimal" xsi:type="string">Amasty\Shopby\Model\Layer\Filter\Decimal</item>
+                <item name="category" xsi:type="string">Amasty\Shopby\Model\Layer\Filter\Category</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Borntechies\LicensePlate\Block\Result">
+        <arguments>
+            <argument name="filterList" xsi:type="object">licensePlateFilterList</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\LayeredNavigation\Block\Navigation\LicensePlate" type="Borntechies\LicensePlate\Block\Navigation">
+        <arguments>
+            <argument name="filterList" xsi:type="object">licensePlateFilterList</argument>
+        </arguments>
+    </virtualType>
+    <type name="Borntechies\LicensePlate\Controller\Result\Extended">
+        <plugin name="Borntechies_LicensePlate::ajaxInject" type="Amasty\Shopby\Plugin\Ajax\CategoryViewAjax" />
+    </type>
+    <type name="Borntechies\LicensePlate\Controller\Result\Index">
+        <plugin name="Borntechies_LicensePlate::ajaxInject" type="Amasty\Shopby\Plugin\Ajax\CategoryViewAjax" />
+    </type>
+</config>

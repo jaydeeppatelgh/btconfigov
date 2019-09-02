@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="borntechies_tab" translate="label" sortOrder="500">
+            <label>Borntechies Extensions</label>
+        </tab>
+        <section id="borntechies" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Orders Export</label>
+            <tab>borntechies_tab</tab>
+            <resource>Borntechies_OrderExport::orderexport</resource>
+            <group id="general" translate="label" type="text comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General settings</label>
+                <field id="output_dir" translate="label" type="text"  sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Output Directory</label>
+                    <comment>Use global path.</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="csv_separator" translate="label" type="text"  sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CSV file separator</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="csv_enclosure" translate="label" type="text"  sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CSV file enclosure</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

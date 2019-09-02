@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
+    <entity name="customers_simple_address" label="Customers Simple Address" model="Borntechies\Import\Model\Import\Customer\SimpleAddress" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <relatedIndexer entity="customer_composite" name="customers_simple_address" />
+</config>

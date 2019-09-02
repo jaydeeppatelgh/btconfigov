@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+        	<container name="licenseplate.forms" as="licenseplateForms" label="License Plate Forms" htmlTag="div" htmlClass="licenseplate-forms" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="licenseplate.search" as="licensePlateSearch" template="Borntechies_LicensePlate::form.mini.phtml" />
+                <block class="Borntechies\LicensePlate\Block\Extended" name="licenseplate.extended.search" as="licensePlateExtendedSearch" template="Borntechies_LicensePlate::form.phtml" />
+            </container>
+        </referenceContainer>	
+    </body>
+</page>

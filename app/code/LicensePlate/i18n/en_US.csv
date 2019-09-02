@@ -1,0 +1,125 @@
+Back,Back
+"Delete Model","Delete Model"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Reset,Reset
+"Save Model","Save Model"
+"Save and Continue Edit","Save and Continue Edit"
+Home,Home
+"Go to Home Page","Go to Home Page"
+"Search results for: '%1' license plate","Search results for: '%1' license plate"
+"Search results for: '%1 %2'","Search results for: '%1 %2'"
+"Search results","Search results"
+"Minimum Search query length is %1","Minimum Search query length is %1"
+"You deleted the model.","You deleted the model."
+"We can't find a model to delete.","We can't find a model to delete."
+"License Plate","License Plate"
+"Manage Models","Manage Models"
+"Edit Model","Edit Model"
+"New Model","New Model"
+Models,Models
+"This model no longer exists.","This model no longer exists."
+"Model with id %1 can not be deleted.","Model with id %1 can not be deleted."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Model is not valid","Model is not valid"
+"You saved the model.","You saved the model."
+"Something went wrong while saving the company.","Something went wrong while saving the company."
+"Model for searched parameters is not found.","Model for searched parameters is not found."
+"Registration number is not found.","Registration number is not found."
+"Model for searched registration is not found.","Model for searched registration is not found."
+"Model or manufacturer is not selected.","Model or manufacturer is not selected."
+"Select Construction Period","Select Construction Period"
+"Select Generation","Select Generation"
+"Model is not selected.","Model is not selected."
+"Select Motor","Select Motor"
+"Select Model","Select Model"
+"Nothing is selected.","Nothing is selected."
+"Field %1 is empty","Field %1 is empty"
+"Fuel field is not valid","Fuel field is not valid"
+"HMDNR field must contain only digits","HMDNR field must contain only digits"
+"HMDNR field is not valid","HMDNR field is not valid"
+"Something went wrong during import. Please check logs for the details.","Something went wrong during import. Please check logs for the details."
+"File %1 for import doesn't exist. Skip update.","File %1 for import doesn't exist. Skip update."
+"CSV file does not contain all required fields.","CSV file does not contain all required fields."
+"Model import file doesn't exist","Model import file doesn't exist"
+"Cannot update models","Cannot update models"
+"Required field %1 is missed in model import","Required field %1 is missed in model import"
+"Cannot update products info","Cannot update products info"
+"Next product skus are not found during licensepalet import: %1","Next product skus are not found during licensepalet import: %1"
+"Next model HMDNR are not found during licensepalet import: %1","Next model HMDNR are not found during licensepalet import: %1"
+"Required field %1 is missed in product import","Required field %1 is missed in product import"
+"Cannot update registration info","Cannot update registration info"
+"Next model HMDNR are not found during registrations import: %1","Next model HMDNR are not found during registrations import: %1"
+"Required field %1 is missed in registration import","Required field %1 is missed in registration import"
+Category,Category
+"Could not save the model product link: %1","Could not save the model product link: %1"
+"Could not delete the model product: %1","Could not delete the model product: %1"
+"Product id %2 is not linked with model %1","Product id %2 is not linked with model %1"
+"Registration with id ""%1"" does not exist.","Registration with id ""%1"" does not exist."
+"Could not delete the registration: %1","Could not delete the registration: %1"
+"Could not save the registration: %1","Could not save the registration: %1"
+"Registration with number ""%1"" does not exist.","Registration with number ""%1"" does not exist."
+"Could not save the model: %1","Could not save the model: %1"
+"Model with id ""%1"" does not exist.","Model with id ""%1"" does not exist."
+"Could not delete the model: %1","Could not delete the model: %1"
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.hmdnr }""","Delete ""${ $.$data.hmdnr }"""
+"Are you sure you wan't to delete a ""${ $.$data.hmdnr }"" record?","Are you sure you wan't to delete a ""${ $.$data.hmdnr }"" record?"
+%1,%1
+"Model Products","Model Products"
+"Model products are shown when customer search for license template","Model products are shown when customer search for license template"
+"Add Model Products","Add Model Products"
+Cancel,Cancel
+"Add Selected Products","Add Selected Products"
+Remove,Remove
+ID,ID
+Thumbnail,Thumbnail
+Name,Name
+Status,Status
+SKU,SKU
+Price,Price
+Actions,Actions
+Registrations,Registrations
+"Registration let customer choose the model to show.","Registration let customer choose the model to show."
+"Add Registration","Add Registration"
+"New Registration","New Registration"
+"Registration Title","Registration Title"
+Title,Title
+"This part also fits on...","This part also fits on..."
+Manufacturer,Manufacturer
+Model,Model
+Motor,Motor
+Generation,Generation
+"Construction Period","Construction Period"
+"License Plate Search","License Plate Search"
+"License Plate Search...","License Plate Search..."
+Search,Search
+"License Plate Extended Search","License Plate Extended Search"
+"Select Manufacturer","Select Manufacturer"
+Brand:,Brand:
+Model:,Model:
+Fuel:,Fuel:
+Motor:,Motor:
+Generation:,Generation:
+"Construction Period:","Construction Period:"
+"Remove filter","Remove filter"
+"Your search returned no results.","Your search returned no results."
+"Licenseplate Import","Licenseplate Import"
+"Path to import files","Path to import files"
+"path from var directory","path from var directory"
+"Model Filename","Model Filename"
+"Registrations Filename","Registrations Filename"
+"Products Filename","Products Filename"
+General,General
+"Redirect to page on filter removal","Redirect to page on filter removal"
+"Redirect back to the same page on filter removal","Redirect back to the same page on filter removal"
+"If customer removes filter on the page other than model search result page, redirect the customer to the same page","If customer removes filter on the page other than model search result page, redirect the customer to the same page"
+"Add New Model","Add New Model"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+HMDNR,HMDNR
+Fuel,Fuel
+"Attribute Set","Attribute Set"
+AttributeSetText,AttributeSetText
+StatusText,StatusText
+Type,Type

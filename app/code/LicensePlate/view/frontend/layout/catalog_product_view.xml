@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <container name="licenseplate.parts" as="licenseplateParts" label="License Plate Parts" htmlTag="div" htmlClass="licenseplate-parts" after="product.info.price">
+                <block class="Borntechies\LicensePlate\Block\Category\Product\Parts" name="licenseplate.product.parts" as="licensePlateProductParts" template="Borntechies_LicensePlate::catalog/product/parts.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>

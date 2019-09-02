@@ -1,0 +1,42 @@
+<?php
+$appliedCategories = $block->getAppliedCategoriesList();
+$categories = $block->getCategoryList();
+$_i = 1;
+?>
+
+<div class="category-breadcrumbs">
+    <?php if ($appliedCategories) : ?>
+        <a href="<?= $block->escapeUrl($block->buildCategoryUrl() ) ?>" class="category-breadcrumbs-home">
+            <span><?= $block->escapeHtml(__('Home')) ?></span>
+        </a>
+    <?php endif; ?>
+
+    <?php foreach ($appliedCategories as $breadcrumbs) : ?>
+        <div class="applied-category">
+            <?php if ($_i++ < count($appliedCategories)) : ?>
+                <a href="<?= $block->escapeUrl($block->buildCategoryUrl($breadcrumbs->getId()) ) ?>">
+                    <?= $block->escapeHtml($breadcrumbs->getName()) ?>
+                </a>
+            <?php else : ?>
+                <strong><?= $block->escapeHtml($breadcrumbs->getName()) ?></strong>
+            <?php endif; ?>
+
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php if (count($categories) > 1) : ?>
+<div class="category-list products-grid">
+    <?php foreach ($categories as $category) : ?>
+        <div class="product-item">
+            <div class="product-item-info">
+                <a class="product photo product-item-photo" href="<?= $block->escapeUrl($block->buildCategoryUrl($category->getId())) ?>">
+                    <?php if ($category->getImage()) : ?>
+                        <img src="<?= $block->escapeUrl($category->getImageUrl()) ?>" alt="<?= $block->escapeHtml($category->getName()) ?>" />
+                    <?php endif; ?>
+                    <span class="product name product-item-name"><?= $block->escapeHtml($category->getName()) ?></span>
+                </a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>

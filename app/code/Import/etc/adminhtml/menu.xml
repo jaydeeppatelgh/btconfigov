@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Borntechies_Import::Queue" title="Catalog &amp; Customers Import" module="Borntechies_Import"
+             sortOrder="200" parent="Magento_Backend::system_convert" action="queue_manager/queue/"
+             resource="Borntechies_Import::queue"/>
+    </menu>
+</config>

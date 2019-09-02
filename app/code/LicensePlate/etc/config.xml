@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <websiterestriction>
+            <full_action_names>
+                <generic>
+                    <licenseplatesearch_result_update />
+                </generic>
+            </full_action_names>
+        </websiterestriction>
+
+        <license_plate_settings>
+            <general>
+                <redirect_on_remove_filter>home</redirect_on_remove_filter>
+                <redirect_back>1</redirect_back>
+            </general>
+        </license_plate_settings>
+    </default>
+</config>

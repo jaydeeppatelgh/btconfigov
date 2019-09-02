@@ -1,0 +1,15 @@
+<?php /**@var \Borntechies\LicensePlate\Block\Result $block */ ?>
+<?php if ($block->canShowProduct()) : ?>
+    <?php if ($block->getResultCount()): ?>
+        <div class="search results">
+            <?php echo $block->getProductListHtml() ?>
+        </div>
+    <?php else: ?>
+        <div class="message notice">
+            <div>
+                <?php /* @escapeNotVerified */ echo($block->getNoResultText()) ? $block->getNoResultText() : __('Your search returned no results.') ?>
+                <?php echo $block->getAdditionalHtml() ?>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>

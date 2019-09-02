@@ -1,0 +1,125 @@
+Back,Terug
+"Delete Model","Verwijder model"
+"Are you sure you want to do this?","Weet je zeker dat je dit wilt doen?"
+Reset,Reset
+"Save Model","Bewaar model"
+"Save and Continue Edit","Bewaar en doorgaan met wijzigen"
+Home,Home
+"Go to Home Page","Ga naar homepage"
+"Search results for: '%1' license plate","Zoekresultaat voor kenteken: '%1'"
+"Search results for: '%1 %2'","Zoekresultaat voor: '%1 %2'"
+"Search results","Zoekresultaat"
+"Minimum Search query length is %1","Minimale lengte voor zoekopdracht is %1"
+"You deleted the model.","Je hebt het model verwijderd."
+"We can't find a model to delete.","Geen model gevonden om te verwijderen."
+"License Plate","Kenteken"
+"Manage Models","Beheer modellen"
+"Edit Model","Wijzig model"
+"New Model","Nieuw Model"
+Models,Modellen
+"This model no longer exists.","Dit model bestaat niet meer."
+"Model with id %1 can not be deleted.","Het model met id %1 kan niet verwijderd worden."
+"A total of %1 record(s) have been deleted.","Er zijn totaal %1 record(s) verwijderd."
+"Model is not valid","Model is niet geldig"
+"You saved the model.","Je hebt het model bewaard."
+"Something went wrong while saving the company.","Er is iets fout gegaan bij het opslaan van het bedrijf."
+"Model for searched parameters is not found.","Geen model gevonden bij de zoek parameters."
+"Registration number is not found.","Kenteken nummer niet gevonden."
+"Model for searched registration is not found.","Model voor gezochte kenteken niet gevonden."
+"Model or manufacturer is not selected.","Model of fabrikant is niet geselecteerd."
+"Select Construction Period","Kies een bouwjaar"
+"Select Generation","Selecteer uitvoering"
+"Model is not selected.","Model is niet geselecteerd."
+"Select Motor","Selecteer motor"
+"Select Model","Selecteer model"
+"Nothing is selected.","Er is niets geselecteerd."
+"Field %1 is empty","Veld %1 is leeg"
+"Fuel field is not valid","Brandstof veld is iet geldig"
+"HMDNR field must contain only digits","HMDNR veld mag alleen nrs bevatten"
+"HMDNR field is not valid","HMDNR veld is niet geldig"
+"Something went wrong during import. Please check logs for the details.","Er is iets fout gegaan tijdens import. Controleer de logs voor details."
+"File %1 for import doesn't exist. Skip update.","Bestand %1 voor import bestaat niet. Skip update."
+"CSV file does not contain all required fields.","CSV file bevat niet alle benodigde velden."
+"Model import file doesn't exist","Model import bestand bestaat niet"
+"Cannot update models","Kan modellen niet updaten"
+"Required field %1 is missed in model import","Verplicht veld %1 niet aanwezig in model import"
+"Cannot update products info","Kan producten info niet updaten"
+"Next product skus are not found during licensepalet import: %1","De volgende productsku's zijn niet gevonden tijdens kenteken import: %1"
+"Next model HMDNR are not found during licensepalet import: %1","De volgende HMDNR's zijn niet geovonden tijdens kenteken import: %1"
+"Required field %1 is missed in product import","Verplicht veld %1 niet aanwezig in product import"
+"Cannot update registration info","kan kenteken info niet updaten"
+"Next model HMDNR are not found during registrations import: %1","De volgende HMDNR's zijn niet gevonden tijdens kenteken import: %1"
+"Required field %1 is missed in registration import","Verplicht veld %1 niet gevonden in kenteken import"
+Category,Categorie
+"Could not save the model product link: %1","Kon de model-product link niet opslaan: %1"
+"Could not delete the model product: %1","Kon model product niet verwijderen: %1"
+"Product id %2 is not linked with model %1","Product id %2 is niet gelinkt aan model %1"
+"Registration with id ""%1"" does not exist.","Kenteken met id ""%1"" bestaat niet."
+"Could not delete the registration: %1","Kon het kenteken niet verwijderen: %1"
+"Could not save the registration: %1","Kon het kenteken niet opslaan: %1"
+"Registration with number ""%1"" does not exist.","Kenteken met nummer ""%1"" bestaat niet."
+"Could not save the model: %1","Kon het model niet opslaan: %1"
+"Model with id ""%1"" does not exist.","Model met id ""%1"" bestaat niet."
+"Could not delete the model: %1","Kon het model niet verwijderen: %1"
+Edit,Wijzigen
+Delete,Verwijderen
+"Delete ""${ $.$data.hmdnr }""","Verwijder ""${ $.$data.hmdnr }"""
+"Are you sure you wan't to delete a ""${ $.$data.hmdnr }"" record?","Weet je zeker dat je record ""${ $.$data.hmdnr }"" wilt verwijderen?"
+%1,%1
+"Model Products","Model Producten"
+"Model products are shown when customer search for license template","Model products worden getoond wanneer klanten zoeken op kenteken"
+"Add Model Products","Model Producten toevoegen"
+Cancel,Annuleren
+"Add Selected Products","Geselecteerde producten toevoegen"
+Remove,Verwijderen
+ID,ID
+Thumbnail,Thumbnail
+Name,Naam
+Status,Status
+SKU,SKU
+Price,Prijs
+Actions,Acties
+Registrations,Kentekens
+"Registration let customer choose the model to show.","Kenteken laat klant het te tonen model kiezen"
+"Add Registration","Kenteken toevoegen"
+"New Registration","Nieuw kenteken"
+"Registration Title","Kenteken titel"
+Title,Titel
+"This part also fits on...","Dit product past ook op..."
+Manufacturer,Fabrikant
+Model,Model
+Motor,Motor
+Generation,Uitvoering
+"Construction Period","Bouw periode"
+"License Plate Search","Zoek op kenteken"
+"License Plate Search...","Zoek op kenteken..."
+Search,Zoeken
+"License Plate Extended Search","Uitgebreid zoeken op kenteken"
+"Select Manufacturer","Selecteer fabrikant"
+Brand:,Merk:
+Model:,Model:
+Fuel:,Brandstof:
+Motor:,Motor:
+Generation:,Uitvoering:
+"Construction Period:","Bouw periode:"
+"Remove filter","Verwijder filter"
+"Your search returned no results.","Geen resultaten gevonden."
+"Licenseplate Import","Kenteken import"
+"Path to import files","Pad naar import files"
+"path from var directory","pad vanaf var directory"
+"Model Filename","Model Filename"
+"Registrations Filename","Kentekens Filename"
+"Products Filename","Products Filename"
+General,General
+"Redirect to page on filter removal","Redirect naar pagina bij verwijderen filter"
+"Redirect back to the same page on filter removal","Redirect terug naar dezelfde pagina bij verwijderen filter"
+"If customer removes filter on the page other than model search result page, redirect the customer to the same page","Indien bezoeker filter verwijderd op een pagina anders dan de model zoekresultaat pagina, redirect dan naar dezelfde pagina."
+"Add New Model","Nieuw model toevoegen"
+"Delete items","Verwijder items"
+"Are you sure you wan't to delete selected items?","Weet je zeker dat je de geselecteerde items wilt verwijderen?"
+HMDNR,HMDNR
+Fuel,Brandstof
+"Attribute Set","Attributen Set"
+AttributeSetText,AttributeSetText
+StatusText,StatusText
+Type,Type

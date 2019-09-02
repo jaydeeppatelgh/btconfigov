@@ -1,0 +1,34 @@
+.admin__field .error {background: #f9d4d4 none repeat scroll 0 0;
+    color: #e22626;
+    border: 1px solid #ed4f2e;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 115px;}
+.admin__field .success {background:#d0e5a9 none repeat scroll 0 0;
+    color: #185b00;;
+    border: 1px solid #5b8116;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 115px;}
+.admin__field .process {background:#feeee1 none repeat scroll 0 0;
+    color: #ed4f2e;;
+    border: 1px solid #ed4f2e;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 115px;}
+.admin__field .admin__field-note {
+    font-size: 1.4rem;
+    text-align: left;
+}

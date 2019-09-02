@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="details" xsi:type="array">
+                    <item name="class" xsi:type="string">Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Details</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="products" xsi:type="array">
+                    <item name="class" xsi:type="string">Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Products</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+                <item name="registrations" xsi:type="array">
+                    <item name="class" xsi:type="string">Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Registrations</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Products">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">licenseplate_model_form.licenseplate_model_form</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Registrations">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">licenseplate_model_form.licenseplate_model_form</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\LicensePlate\Ui\DataProvider\Model\Form\ModelDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Borntechies\LicensePlate\Ui\DataProvider\Model\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <borntechies>
+            <general>
+                <output_dir>/var/www/borntechies/var/export</output_dir>
+                <csv_separator>;</csv_separator>
+                <csv_enclosure>"</csv_enclosure>
+            </general>
+        </borntechies>
+    </default>
+</config>

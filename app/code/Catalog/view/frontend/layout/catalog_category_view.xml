@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.products.list">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Borntechies_Catalog::catalog/product/list.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Borntechies\Catalog\Block\Breadbcumbs" name="category-bread" before="-" template="catalog/breadcrumbs.phtml">
+                <block class="Magento\Theme\Block\Html\Breadcrumbs" name="breadcrumbs-category" template="Magento_Catalog::breadcrumbs.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

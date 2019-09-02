@@ -1,0 +1,63 @@
+<?php
+/** @var $block \Borntechies\LicensePlate\Block\Category\Product\Parts */
+ $productParts = $block->getProductParts()
+?>
+<div class="licence-plate-part">
+    <?php if ($productParts->getItems()) : ?>
+        <div id="parts-popup-modal" class="licence-plate-part-popup" style="display:none;">
+            <h3 class="licence-plate-title"><?php /* @escapeNotVerified */ echo __('Also suitable for...'); ?></h3>
+            <div class="licence-plate-list">
+                <ul class="licence-plate-list-header">
+                    <li><?php /* @escapeNotVerified */ echo __('Manufacturer'); ?></li>
+                    <li><?php /* @escapeNotVerified */ echo __('Model'); ?></li>
+                    <li><?php /* @escapeNotVerified */ echo __('Motor'); ?></li>
+                    <li><?php /* @escapeNotVerified */ echo __('Generation'); ?></li>
+                    <li><?php /* @escapeNotVerified */ echo __('Construction Period'); ?></li>
+                </ul>
+                <?php foreach ($productParts->getItems() as $part) : ?>
+                    <ul class="licence-plate-list-content">
+                        <li class="manufactur small-font"><?php /* @escapeNotVerified */ echo $part->getMake() ?></li>
+                        <li class="model small-font"><?php /* @escapeNotVerified */ echo $part->getModel() ?></li>
+                        <li class="motor small-font"><?php /* @escapeNotVerified */ echo $part->getMotorCode() ?></li>
+                        <li class="generation small-font"><?php /* @escapeNotVerified */ echo $part->getGeneration() ?></li>
+                        <li class="construction small-font"><?php /* @escapeNotVerified */ echo $part->getConstructionPeriod() ?></li>
+                    </ul>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div>
+            <a href="#" id="parts-popup-open"><?php echo __('This product also suitable for...') ?></a>
+        </div>
+
+        <script>
+            require(
+                [
+                    'jquery',
+                    'Magento_Ui/js/modal/modal'
+                ],
+                function(
+                    $,
+                    modal
+                ) {
+                    var options = {
+                        type: 'popup',
+                        responsive: true,
+                        innerScroll: true,
+                        zIndex:3000
+                    };
+
+                    var popup = modal(options, $('#parts-popup-modal'));
+                    $("#parts-popup-open").on('click',function(){
+                        $("#parts-popup-modal").modal("openModal");
+                    });
+
+                }
+            );
+        </script>
+    <?php endif; ?>
+</div>
+
+
+
+   
+

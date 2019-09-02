@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="borntechies_tab" translate="label" sortOrder="500">
+            <label>Borntechies Extensions</label>
+        </tab>
+        <section id="queue_manager" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Catalog &amp; Customers Import</label>
+            <tab>borntechies_tab</tab>
+            <resource>Borntechies_Import::queue</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="keep_logs" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Keep Logs (days)</label>
+                    <validate>required-entry validate-number</validate>
+                </field>
+                <field id="send_email_on_failure" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Send Email On Failure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_to" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email to</label>
+                    <validate>required-entry validate-email</validate>
+                    <depends>
+                        <field id="send_email_on_failure">1</field>
+                    </depends>
+                </field>
+                <field id="error_email_template" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Error Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends>
+                        <field id="send_email_on_failure">1</field>
+                    </depends>
+                </field>
+                <field id="error_email_identity" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Error Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <depends>
+                        <field id="send_email_on_failure">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="product_import" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Import</label>
+                <field id="delete_previous" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delete products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Delete products that are not in import file</comment>
+                </field>
+                <field id="import_profile" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>UrapidFlow Import Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                </field>
+                <field id="export_profile" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UrapidFlow Export Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                    <depends>
+                        <field id="delete_previous">1</field>
+                    </depends>
+                </field>
+                <field id="delete_profile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UrapidFlow Delete Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                    <depends>
+                        <field id="delete_previous">1</field>
+                    </depends>
+                </field>
+                <field id="price_profile" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UrapidFlow Price Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                </field>
+                <field id="upsell_profile" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UrapidFlow Upsell Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                </field>
+                <field id="category_profile" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>UrapidFlow Category Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                </field>
+                <field id="stock_profile" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UrapidFlow Stock Profile</label>
+                    <source_model>Borntechies\Import\Model\Queue\Source\Profile</source_model>
+                </field>
+            </group>
+
+            <group id="customer_import" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Customer Import</label>
+                <field id="file_path" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Path to import file</label>
+                    <validate>required-entry</validate>
+                    <comment>path from var directory</comment>
+                </field>
+                <field id="file_name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Filename</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

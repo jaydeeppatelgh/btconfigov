@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="queue_manager">
+            <group id="licenseplate_import" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Licenseplate Import</label>
+                <field id="file_path" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Path to import files</label>
+                    <validate>required-entry</validate>
+                    <comment>path from var directory</comment>
+                </field>
+                <field id="model_filename" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Model Filename</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="registrations_filename" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Registrations Filename</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="products_filename" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Products Filename</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+
+        <section id="license_plate_settings" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>License Plate</label>
+            <tab>borntechies_tab</tab>
+            <resource>Borntechies_LicensePlate::settings</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="show_form" translate="label" type="select" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Show Lisenceplate search form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_on_remove_filter" translate="label" type="select" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Redirect to page on filter removal</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                </field>
+                <field id="redirect_back" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Redirect back to the same page on filter removal</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If customer removes filter on the page other than model search result page, redirect the customer to the same page</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
